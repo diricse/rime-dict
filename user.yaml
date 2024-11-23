@@ -1,0 +1,63 @@
+engine:
+  dictionary:
+    - rime_zh_simp
+  filters:
+    - simplifier
+    - uniquifier
+    - single_char_filter
+patch:
+  "ascii_composer/good_old_caps_lock": true
+  "ascii_composer/switch_key":
+    Caps_Lock: commit_code
+    Control_L: noop
+    Control_R: noop
+    Shift_L: commit_code
+    Shift_R: commit_code
+  "key_binder/bindings":
+    - {accept: Tab, send: "Shift+Right", when: composing}
+    - {accept: minus, send: Page_Up, when: paging}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - {accept: comma, send: Page_Up, when: paging}
+    - {accept: period, send: Page_Down, when: has_menu}
+    - {accept: bracketleft, send: Page_Up, when: paging}
+    - {accept: bracketright, send: Page_Down, when: has_menu}
+    - {accept: "Control+Shift+4", toggle: simplification, when: always}
+    - {accept: "Control+Shift+5", toggle: cangjie5, when: always}
+  "menu/page_size": 10
+  schema_list:
+    - {schema: luna_pinyin_simp}
+    - {schema: luna_pinyin}
+    - {schema: cangjie5}
+    - {schema: numbers}
+  "speller/algebra":
+    - "abbrev/^([bcdfghjklprstvwxyz]).+$/$1/"
+    - "derive/^tzi/ci/"
+    - "derive/^tsi/chi/"
+    - "derive/^zi/ji/"
+    - "derive/^si/xi/"
+    - "derive/^(ch|d?j|gn|x|y)i([aeou])/$1$2/"
+    - "derive/^tzyu/tzy/"
+    - "derive/^tsyu/tsy/"
+    - "derive/^zyu/zy/"
+    - "derive/^syu/sy/"
+    - "derive/(.*)ij/$1i/"
+    - "derive/(.*)iaq/$1iq/"
+    - "derive/^yaq/yiq/"
+    - "derive/(.*)aon/$1an/"
+    - "derive/(.*)aq/$1eq/"
+    - "derive/(.*)eq/$1aq/"
+    - "derive/^yeu/yu/"
+    - "derive/(.*)ieu/$1iu/"
+    - "derive/^vu/wu/"
+    - "derive/(.*)ueu/$1eu/"
+    - "derive/^weu/reu/"
+  "style/font_face": "宋体"
+  "style/font_point": 12
+  "style/horizontal": true
+var:
+  last_build_time: 1732349723
+  previously_selected_schema: luna_pinyin_simp
+  schema_access_time:
+    cangjie5: 1732349956
+    cangjie6: 1732338623
+    luna_pinyin_simp: 1732350125
