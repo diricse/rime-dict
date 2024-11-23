@@ -4,4 +4,6 @@
 
 user.yaml是简单使用的rime配置文件
 
-rime_zh_simp.dict.yaml 是一个合并好的词典
+rime_zh_simp.dict.yaml.zip 是一个合并好的词典
+使用的时候得提前解压
+
